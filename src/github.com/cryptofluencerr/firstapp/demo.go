@@ -56,12 +56,45 @@ func main() {
 	// d := b[:len(b)-1]
 	// fmt.Println(c)
 	// fmt.Println(d)
-	statePopulations := map[string]int{
-		"California":   1232132131,
-		"Texas":        23242432,
-		"Florida":      231312313,
-		"New York":     31323432,
-		"Pennsylvania": 34354645,
+	// statePopulations := map[string]int{
+	// 	"California":   1232132131,
+	// 	"Texas":        23242432,
+	// 	"Florida":      231312313,
+	// 	"New York":     31323432,
+	// 	"Pennsylvania": 34354645,
+	// }
+	// fmt.Println(statePopulations)
+
+	//STRUCTS
+
+	// type Doctor struct {
+	// 	number     int
+	// 	actorName  string
+	// 	companions []string
+	// }
+	// aDoctor := struct{ name string }{name: "Karan"}
+	// anotherDoctor := &aDoctor
+	// anotherDoctor.name = "Tom"
+	// fmt.Println(aDoctor)
+	// fmt.Println(anotherDoctor)
+
+	//EMBEDDING IN STRUCT
+
+	type Animal struct {
+		origin string
+		name   string
 	}
-	fmt.Println(statePopulations)
+	type Bird struct {
+		Animal
+		speed  float32
+		canFly bool
+	}
+
+	b := Bird{speed: 34.4,
+		canFly: true,
+		Animal: Animal{name: "Emu",
+			origin: "Australia"}}
+
+	fmt.Println(b)
+
 }
